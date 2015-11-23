@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E23869081C0356F1000FE667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23869071C0356F1000FE667 /* AppDelegate.swift */; };
+		E238690A1C0356F1000FE667 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23869091C0356F1000FE667 /* ViewController.swift */; };
+		E238690D1C0356F1000FE667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E238690B1C0356F1000FE667 /* Main.storyboard */; };
+		E23869101C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E238690E1C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld */; };
+		E23869121C0356F1000FE667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23869111C0356F1000FE667 /* Assets.xcassets */; };
+		E23869151C0356F1000FE667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23869131C0356F1000FE667 /* LaunchScreen.storyboard */; };
+		E23869201C0356F1000FE667 /* Kitchen_PalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238691F1C0356F1000FE667 /* Kitchen_PalTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E238691C1C0356F1000FE667 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E23868FC1C0356F1000FE667 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E23869031C0356F1000FE667;
+			remoteInfo = "Kitchen Pal";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E23869041C0356F1000FE667 /* Kitchen Pal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kitchen Pal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23869071C0356F1000FE667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E23869091C0356F1000FE667 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E238690C1C0356F1000FE667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E238690F1C0356F1000FE667 /* Kitchen_Pal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kitchen_Pal.xcdatamodel; sourceTree = "<group>"; };
+		E23869111C0356F1000FE667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E23869141C0356F1000FE667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E23869161C0356F1000FE667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E238691B1C0356F1000FE667 /* Kitchen PalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen PalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E238691F1C0356F1000FE667 /* Kitchen_PalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen_PalTests.swift; sourceTree = "<group>"; };
+		E23869211C0356F1000FE667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E23869011C0356F1000FE667 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E23869181C0356F1000FE667 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E23868FB1C0356F1000FE667 = {
+			isa = PBXGroup;
+			children = (
+				E23869061C0356F1000FE667 /* Kitchen Pal */,
+				E238691E1C0356F1000FE667 /* Kitchen PalTests */,
+				E23869051C0356F1000FE667 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E23869051C0356F1000FE667 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E23869041C0356F1000FE667 /* Kitchen Pal.app */,
+				E238691B1C0356F1000FE667 /* Kitchen PalTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E23869061C0356F1000FE667 /* Kitchen Pal */ = {
+			isa = PBXGroup;
+			children = (
+				E23869071C0356F1000FE667 /* AppDelegate.swift */,
+				E23869091C0356F1000FE667 /* ViewController.swift */,
+				E238690B1C0356F1000FE667 /* Main.storyboard */,
+				E23869111C0356F1000FE667 /* Assets.xcassets */,
+				E23869131C0356F1000FE667 /* LaunchScreen.storyboard */,
+				E23869161C0356F1000FE667 /* Info.plist */,
+				E238690E1C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld */,
+			);
+			path = "Kitchen Pal";
+			sourceTree = "<group>";
+		};
+		E238691E1C0356F1000FE667 /* Kitchen PalTests */ = {
+			isa = PBXGroup;
+			children = (
+				E238691F1C0356F1000FE667 /* Kitchen_PalTests.swift */,
+				E23869211C0356F1000FE667 /* Info.plist */,
+			);
+			path = "Kitchen PalTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E23869031C0356F1000FE667 /* Kitchen Pal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E23869241C0356F1000FE667 /* Build configuration list for PBXNativeTarget "Kitchen Pal" */;
+			buildPhases = (
+				E23869001C0356F1000FE667 /* Sources */,
+				E23869011C0356F1000FE667 /* Frameworks */,
+				E23869021C0356F1000FE667 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kitchen Pal";
+			productName = "Kitchen Pal";
+			productReference = E23869041C0356F1000FE667 /* Kitchen Pal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E238691A1C0356F1000FE667 /* Kitchen PalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E23869271C0356F1000FE667 /* Build configuration list for PBXNativeTarget "Kitchen PalTests" */;
+			buildPhases = (
+				E23869171C0356F1000FE667 /* Sources */,
+				E23869181C0356F1000FE667 /* Frameworks */,
+				E23869191C0356F1000FE667 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E238691D1C0356F1000FE667 /* PBXTargetDependency */,
+			);
+			name = "Kitchen PalTests";
+			productName = "Kitchen PalTests";
+			productReference = E238691B1C0356F1000FE667 /* Kitchen PalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E23868FC1C0356F1000FE667 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Grintas Junevičius";
+				TargetAttributes = {
+					E23869031C0356F1000FE667 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					E238691A1C0356F1000FE667 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = E23869031C0356F1000FE667;
+					};
+				};
+			};
+			buildConfigurationList = E23868FF1C0356F1000FE667 /* Build configuration list for PBXProject "Kitchen Pal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E23868FB1C0356F1000FE667;
+			productRefGroup = E23869051C0356F1000FE667 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E23869031C0356F1000FE667 /* Kitchen Pal */,
+				E238691A1C0356F1000FE667 /* Kitchen PalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E23869021C0356F1000FE667 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E23869151C0356F1000FE667 /* LaunchScreen.storyboard in Resources */,
+				E23869121C0356F1000FE667 /* Assets.xcassets in Resources */,
+				E238690D1C0356F1000FE667 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E23869191C0356F1000FE667 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E23869001C0356F1000FE667 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E23869101C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld in Sources */,
+				E238690A1C0356F1000FE667 /* ViewController.swift in Sources */,
+				E23869081C0356F1000FE667 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E23869171C0356F1000FE667 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E23869201C0356F1000FE667 /* Kitchen_PalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E238691D1C0356F1000FE667 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E23869031C0356F1000FE667 /* Kitchen Pal */;
+			targetProxy = E238691C1C0356F1000FE667 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E238690B1C0356F1000FE667 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E238690C1C0356F1000FE667 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E23869131C0356F1000FE667 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E23869141C0356F1000FE667 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E23869221C0356F1000FE667 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E23869231C0356F1000FE667 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E23869251C0356F1000FE667 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Kitchen Pal/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Grintas.Kitchen-Pal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E23869261C0356F1000FE667 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Kitchen Pal/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Grintas.Kitchen-Pal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E23869281C0356F1000FE667 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Kitchen PalTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Grintas.Kitchen-PalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kitchen Pal.app/Kitchen Pal";
+			};
+			name = Debug;
+		};
+		E23869291C0356F1000FE667 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Kitchen PalTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Grintas.Kitchen-PalTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kitchen Pal.app/Kitchen Pal";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E23868FF1C0356F1000FE667 /* Build configuration list for PBXProject "Kitchen Pal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E23869221C0356F1000FE667 /* Debug */,
+				E23869231C0356F1000FE667 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E23869241C0356F1000FE667 /* Build configuration list for PBXNativeTarget "Kitchen Pal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E23869251C0356F1000FE667 /* Debug */,
+				E23869261C0356F1000FE667 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E23869271C0356F1000FE667 /* Build configuration list for PBXNativeTarget "Kitchen PalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E23869281C0356F1000FE667 /* Debug */,
+				E23869291C0356F1000FE667 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E238690E1C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E238690F1C0356F1000FE667 /* Kitchen_Pal.xcdatamodel */,
+			);
+			currentVersion = E238690F1C0356F1000FE667 /* Kitchen_Pal.xcdatamodel */;
+			path = Kitchen_Pal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E23868FC1C0356F1000FE667 /* Project object */;
+}
