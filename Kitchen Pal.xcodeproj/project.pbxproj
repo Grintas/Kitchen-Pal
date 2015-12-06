@@ -14,6 +14,10 @@
 		E23869121C0356F1000FE667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23869111C0356F1000FE667 /* Assets.xcassets */; };
 		E23869151C0356F1000FE667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23869131C0356F1000FE667 /* LaunchScreen.storyboard */; };
 		E23869201C0356F1000FE667 /* Kitchen_PalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238691F1C0356F1000FE667 /* Kitchen_PalTests.swift */; };
+		E23869621C036531000FE667 /* Ingredients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695C1C036531000FE667 /* Ingredients+CoreDataProperties.swift */; };
+		E23869631C036531000FE667 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695D1C036531000FE667 /* Ingredients.swift */; };
+		E23869641C036531000FE667 /* Recipes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */; };
+		E23869651C036531000FE667 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695F1C036531000FE667 /* Recipes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		E238691B1C0356F1000FE667 /* Kitchen PalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kitchen PalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E238691F1C0356F1000FE667 /* Kitchen_PalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen_PalTests.swift; sourceTree = "<group>"; };
 		E23869211C0356F1000FE667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E238695C1C036531000FE667 /* Ingredients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredients+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E238695D1C036531000FE667 /* Ingredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E238695F1C036531000FE667 /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,10 @@
 		E23868FB1C0356F1000FE667 = {
 			isa = PBXGroup;
 			children = (
+				E238695C1C036531000FE667 /* Ingredients+CoreDataProperties.swift */,
+				E238695D1C036531000FE667 /* Ingredients.swift */,
+				E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */,
+				E238695F1C036531000FE667 /* Recipes.swift */,
 				E23869061C0356F1000FE667 /* Kitchen Pal */,
 				E238691E1C0356F1000FE667 /* Kitchen PalTests */,
 				E23869051C0356F1000FE667 /* Products */,
@@ -202,6 +214,10 @@
 			files = (
 				E23869101C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld in Sources */,
 				E238690A1C0356F1000FE667 /* ViewController.swift in Sources */,
+				E23869651C036531000FE667 /* Recipes.swift in Sources */,
+				E23869641C036531000FE667 /* Recipes+CoreDataProperties.swift in Sources */,
+				E23869621C036531000FE667 /* Ingredients+CoreDataProperties.swift in Sources */,
+				E23869631C036531000FE667 /* Ingredients.swift in Sources */,
 				E23869081C0356F1000FE667 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +408,7 @@
 				E23869261C0356F1000FE667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E23869271C0356F1000FE667 /* Build configuration list for PBXNativeTarget "Kitchen PalTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +417,7 @@
 				E23869291C0356F1000FE667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

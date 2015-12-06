@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ihe-Ql-fhn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Quick search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Quick search" id="BYZ-38-t0r" customClass="ViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,233 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYS-hf-pHk">
+                                <rect key="frame" x="235" y="80" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXv-yb-sca">
+                                <rect key="frame" x="20" y="236" width="560" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-2H-j9e">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV4-84-cjV">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ja2-YN-Oly"/>
+                                </constraints>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="18g-7O-6wL">
+                                <rect key="frame" x="20" y="372" width="560" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="ngl-99-6Ri">
+                                    <size key="itemSize" width="25" height="25"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ODn-Xw-ZEQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYl-Ou-uu9">
+                                                    <rect key="frame" x="41" y="49" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lYl-Ou-uu9" firstAttribute="centerX" secondItem="ODn-Xw-ZEQ" secondAttribute="centerX" id="N5u-5G-0Si"/>
+                                            <constraint firstItem="lYl-Ou-uu9" firstAttribute="centerY" secondItem="ODn-Xw-ZEQ" secondAttribute="centerY" id="z2N-0n-mcr"/>
+                                        </constraints>
+                                        <size key="customSize" width="128" height="128"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OqC-mj-WUF">
+                                        <rect key="frame" x="144" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMm-Sm-Jbf">
+                                                    <rect key="frame" x="41" y="49" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="JMm-Sm-Jbf" firstAttribute="centerX" secondItem="OqC-mj-WUF" secondAttribute="centerX" id="LQu-Hb-EEL"/>
+                                            <constraint firstItem="JMm-Sm-Jbf" firstAttribute="centerY" secondItem="OqC-mj-WUF" secondAttribute="centerY" id="puN-xM-usu"/>
+                                        </constraints>
+                                        <size key="customSize" width="128" height="128"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dcr-NU-aeV">
+                                        <rect key="frame" x="288" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxI-cw-f8c">
+                                                    <rect key="frame" x="41" y="49" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="jxI-cw-f8c" firstAttribute="centerX" secondItem="dcr-NU-aeV" secondAttribute="centerX" id="FpM-lj-aS3"/>
+                                            <constraint firstItem="jxI-cw-f8c" firstAttribute="centerY" secondItem="dcr-NU-aeV" secondAttribute="centerY" id="Z9h-ND-vle"/>
+                                        </constraints>
+                                        <size key="customSize" width="128" height="128"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SM5-GC-3Tl">
+                                        <rect key="frame" x="432" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Br9-Xp-H1t">
+                                                    <rect key="frame" x="41" y="49" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Br9-Xp-H1t" firstAttribute="centerY" secondItem="SM5-GC-3Tl" secondAttribute="centerY" id="Bs3-Fy-HbL"/>
+                                            <constraint firstItem="Br9-Xp-H1t" firstAttribute="centerX" secondItem="SM5-GC-3Tl" secondAttribute="centerX" id="ndu-vJ-ln5"/>
+                                        </constraints>
+                                        <size key="customSize" width="128" height="128"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I3T-6L-SDL">
+                                <rect key="frame" x="20" y="200" width="560" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acI-11-BpZ">
+                                <rect key="frame" x="256" y="513" width="88" height="30"/>
+                                <state key="normal" title="Find recipes!"/>
+                                <connections>
+                                    <segue destination="xBp-pw-vxt" kind="show" id="gvg-gT-QHL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aXv-yb-sca" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3sj-kC-HTP"/>
+                            <constraint firstItem="acI-11-BpZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7sz-dc-025"/>
+                            <constraint firstItem="QYS-hf-pHk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="8ek-AL-pPH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aXv-yb-sca" secondAttribute="trailing" id="9sM-gq-1ck"/>
+                            <constraint firstItem="QYS-hf-pHk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LbS-ME-DMb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="acI-11-BpZ" secondAttribute="bottom" constant="8" id="T8E-Pd-Dmh"/>
+                            <constraint firstItem="aXv-yb-sca" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nH5-7k-qi7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8id-Kf-z4F"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1991" y="272"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qi3-0w-8ms">
+            <objects>
+                <viewController id="xBp-pw-vxt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="26v-ud-dHI"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0O-Ge-j9L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IGi-Yg-l0F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="70q-C5-ZHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2745" y="272"/>
+        </scene>
+        <!--Browse recipes-->
+        <scene sceneID="CDu-Fh-lvh">
+            <objects>
+                <viewController title="Browse recipes" id="PbJ-Hi-0XX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BhT-AB-H3L"/>
+                        <viewControllerLayoutGuide type="bottom" id="azP-Oq-U91"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ntb-Rv-ge5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Browse recipes" id="p5p-im-J3O">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCn-Vm-qJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="919"/>
+        </scene>
+        <!--Kitchen Pal-->
+        <scene sceneID="ZVK-RS-9Ai">
+            <objects>
+                <tabBarController title="Kitchen Pal" automaticallyAdjustsScrollViewInsets="NO" id="Ihe-Ql-fhn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="U2P-yj-tty">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="87D-Tj-nC2" kind="relationship" relationship="viewControllers" id="lec-qy-8KC"/>
+                        <segue destination="PbJ-Hi-0XX" kind="relationship" relationship="viewControllers" id="2u7-4R-ofJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc8-gB-jZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="596"/>
+        </scene>
+        <!--Quick search-->
+        <scene sceneID="83A-nt-38g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87D-Tj-nC2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Quick search" id="OCA-o3-ws8">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WxU-2d-5EI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aik-nH-pyl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1CS-dI-9Ws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="272"/>
         </scene>
     </scenes>
 </document>

@@ -13,13 +13,128 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func deleteAllObjects(entityName: String) {
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        do {
+            let objects = try self.managedObjectContext.executeFetchRequest(fetchRequest)
+            
+            for object in objects as! [NSManagedObject] {
+                self.managedObjectContext.deleteObject(object)
+            }
+            
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Error deleting \(entityName) - error:\(error)")
+        }
+    }
 
-
+    func initKitchen() {
+        let pork = NSEntityDescription.insertNewObjectForEntityForName("Ingredients",
+            inManagedObjectContext: self.managedObjectContext) as! Ingredients
+        pork.name = "Pork"
+        
+        let beef = NSEntityDescription.insertNewObjectForEntityForName("Ingredients",
+            inManagedObjectContext: self.managedObjectContext) as! Ingredients
+        beef.name = "Beef"
+        
+        let chicken = NSEntityDescription.insertNewObjectForEntityForName("Ingredients",
+            inManagedObjectContext: self.managedObjectContext) as! Ingredients
+        chicken.name = "Chicken"
+        
+        let fish = NSEntityDescription.insertNewObjectForEntityForName("Ingredients",
+            inManagedObjectContext: self.managedObjectContext) as! Ingredients
+        fish.name = "Fish"
+        
+        let cheese = NSEntityDescription.insertNewObjectForEntityForName("Ingredients", inManagedObjectContext: self.managedObjectContext) as! Ingredients
+        cheese.name = "Cheese"
+        
+        
+        let steak = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
+        steak.title = "The Beef Steak"
+        steak.directions = " "
+        
+        let crustedChicken = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
+        crustedChicken.title = "Parmesan Crusted Chicken"
+        crustedChicken.directions = " "
+        
+        let salmon = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
+        salmon.title = "Grilled Salmon"
+        salmon.directions = " "
+        
+        let tacos = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
+        tacos.title = "Fish Tacos"
+        tacos.directions = " "
+        
+        
+        let steakRelation = steak.mutableSetValueForKeyPath("hasIngredient")
+        steakRelation.addObject(beef)
+        
+        let crustedChickenRelation = crustedChicken.mutableSetValueForKeyPath("hasIngredient")
+        crustedChickenRelation.addObject(chicken)
+        
+        let salmonRelation = salmon.mutableSetValueForKeyPath("hasIngredient")
+        salmonRelation.addObject(fish)
+        
+        let tacosRelation = tacos.mutableSetValueForKeyPath("hasIngredient")
+        tacosRelation.addObject(fish)
+        tacosRelation.addObject(cheese)
+        
+        
+        self.saveContext()
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+                    deleteAllObjects("Ingredients")
+                    deleteAllObjects("Recipes")
+                    initKitchen()
+        //            insertSomeData()
+                    showRequestedRecipes("Fish")
+                    showExampleData()
         // Override point for customization after application launch.
         return true
     }
+    
+    func showRequestedRecipes(request: String){
+        let ingredientRequest = NSFetchRequest(entityName: "Ingredients")
+        // let requestedName = "Fish"
+        do {
+            let ingredients = try self.managedObjectContext.executeFetchRequest(ingredientRequest)
+            for ingredient in ingredients as! [Ingredients] {
+                print("Recipes for ingredient: \(ingredient.name)")
+                let recipes = ingredient.valueForKey("isInRecipe") as! NSSet
+                for recipe in recipes {
+                    print("Title: \(recipe.title as String)")
+                }
+            }
+            
+            
+            // if let fetchedRecipes = try self.managedObjectContext.executeFetchRequest(recipesRequest) as! [Recipes]
+            // recipesRequest.predicate = NSPredicate(format: "requestedName == %@", requestedName)
+        } catch let error as NSError {
+            print("Error fetching: \(error)")
+        }
+    }
 
+    
+    func showExampleData() {
+        
+        let recipesRequest = NSFetchRequest(entityName: "Recipes")
+        do {
+            let recipes = try self.managedObjectContext.executeFetchRequest(recipesRequest)
+            for recipe in recipes as! [Recipes] {
+                print("Ingredients for recipe: \(recipe.title)")
+                let ingredients = recipe.valueForKey("hasIngredient") as! NSSet
+                for ingredient in ingredients {
+                    print("Name: \(ingredient.name)")
+                }
+            }
+        } catch let error as NSError {
+            print("Error fetching: \(error)")
+        }
+    }
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
