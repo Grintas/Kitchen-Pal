@@ -14,7 +14,7 @@ import CoreData
 
 extension Ingredients {
 
-    @NSManaged var name: String?
+    @NSManaged var name: String
     @NSManaged var isInRecipe: NSSet?
 
 }

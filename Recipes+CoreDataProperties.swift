@@ -14,8 +14,8 @@ import CoreData
 
 extension Recipes {
 
-    @NSManaged var title: String?
-    @NSManaged var directions: String?
+    @NSManaged var title: String
+    @NSManaged var directions: String
     @NSManaged var hasIngredient: NSSet?
 
 }

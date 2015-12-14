@@ -8,11 +8,14 @@
 
 import UIKit
 
-class TableViewSuperViewController: UIViewController {
-
+class TableViewSuperViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    var titles: [Recipes] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        titles = appDelegate.getAllRecipes()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +23,17 @@ class TableViewSuperViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titles.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("recipeCell", forIndexPath: indexPath) as! RecipeCell
+        cell.recipeName.text = titles[indexPath.row].title
+        return cell
+    }
+    
     
 
     /*

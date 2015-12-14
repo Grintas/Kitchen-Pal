@@ -8,25 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "prototypeCellIdentifier"
 
-class QuickSearchCollectionViewController: UICollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class QuickSearchCollectionViewController: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
+    var buttonTitles: [Ingredients] = []
+    
+    override func awakeFromNib() {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        buttonTitles = appDelegate.getAllIngredients()
     }
 
     /*
@@ -39,22 +29,30 @@ class QuickSearchCollectionViewController: UICollectionViewController {
     }
     */
 
+
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        if buttonTitles.count == 0 {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            buttonTitles = appDelegate.getAllIngredients()
+        }
+        return buttonTitles.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCellController
     
+        cell.ingredientButton.titleLabel?.text = buttonTitles[indexPath.row].name
         // Configure the cell
     
         return cell

@@ -10,6 +10,8 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
 
+    @IBOutlet weak var recipeName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
