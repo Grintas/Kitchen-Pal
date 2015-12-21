@@ -115,7 +115,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error fetching: \(error)")
         }
     }
-
+    
+    func getRequestedRecipes(request: String) -> [Recipes]?{
+        var requestedRecipes: [Recipes]? = nil
+        let recipesRequest = NSFetchRequest(entityName: "Recipes")
+        do {
+            let recipes = try self.managedObjectContext.executeFetchRequest(recipesRequest)
+            for recipe in recipes as! [Recipes] {
+                if recipe == request{
+                    requestedRecipes?.append(recipe)
+                }
+            }
+        } catch let error as NSError {
+            print("Error fetching: \(error)")
+        }
+        
+        return requestedRecipes
+    }
     
     func showExampleData() {
         

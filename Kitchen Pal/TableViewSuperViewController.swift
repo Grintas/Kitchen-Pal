@@ -30,6 +30,7 @@ class TableViewSuperViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("recipeCell", forIndexPath: indexPath) as! RecipeCell
+        
         cell.recipeName.text = titles[indexPath.row].title
         return cell
     }

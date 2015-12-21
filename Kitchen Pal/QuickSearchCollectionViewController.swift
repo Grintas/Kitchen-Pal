@@ -2,7 +2,7 @@
 //  QuickSearchCollectionViewController.swift
 //  Kitchen Pal
 //
-//  Created by Grintas Junevičius on 12/7/15.
+//  Created by Grintas Junevičius on 12/14/15.
 //  Copyright © 2015 Grintas Junevičius. All rights reserved.
 //
 
@@ -10,13 +10,28 @@ import UIKit
 
 private let reuseIdentifier = "prototypeCellIdentifier"
 
-class QuickSearchCollectionViewController: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
+class QuickSearchCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var buttonTitles: [Ingredients] = []
+    var indexPath: NSIndexPath?
+    var selectedItem: String?
     
-    override func awakeFromNib() {
-        
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Register cell classes
+
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         buttonTitles = appDelegate.getAllIngredients()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     /*
@@ -28,7 +43,6 @@ class QuickSearchCollectionViewController: UICollectionView, UICollectionViewDat
         // Pass the selected object to the new view controller.
     }
     */
-
 
     // MARK: UICollectionViewDataSource
 
@@ -48,16 +62,24 @@ class QuickSearchCollectionViewController: UICollectionView, UICollectionViewDat
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
         
+        cell.ingredientButton.setTitle(buttonTitles[indexPath.row].name, forState: .Normal)
+        // Configure the cel
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCellController
-    
-        cell.ingredientButton.titleLabel?.text = buttonTitles[indexPath.row].name
-        // Configure the cell
-    
         return cell
     }
 
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.indexPath = indexPath
+        self.selectedItem = self.buttonTitles[indexPath.item].name
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let resVC = segue.destinationViewController as! ResultsTableViewController
+        resVC.selectedItem = self.selectedItem;
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

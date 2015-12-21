@@ -9,7 +9,7 @@
         <!--Quick search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Quick search" id="BYZ-38-t0r" customClass="ViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Quick search" id="BYZ-38-t0r" customClass="QuickSearchCollectionViewController" customModule="Kitchen_Pal" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,27 +24,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="18g-7O-6wL" customClass="QuickSearchCollectionViewController" customModule="Kitchen_Pal" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="18g-7O-6wL">
                                 <rect key="frame" x="20" y="236" width="560" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.44190375329999998" blue="0.40776155949999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="dRT-q5-nPV"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="5" id="ngl-99-6Ri">
-                                    <size key="itemSize" width="25" height="25"/>
+                                    <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="prototypeCellIdentifier" id="ODn-Xw-ZEQ" customClass="CollectionViewCellController" customModule="Kitchen_Pal" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="prototypeCellIdentifier" id="ODn-Xw-ZEQ" customClass="CollectionViewCell" customModule="Kitchen_Pal">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYl-Ou-uu9">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYl-Ou-uu9">
                                                     <rect key="frame" x="30" y="49" width="68" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration" label="">
@@ -56,7 +56,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.17254902420000001" green="0.99607849120000003" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstItem="lYl-Ou-uu9" firstAttribute="centerX" secondItem="ODn-Xw-ZEQ" secondAttribute="centerX" id="N5u-5G-0Si"/>
                                             <constraint firstItem="lYl-Ou-uu9" firstAttribute="centerY" secondItem="ODn-Xw-ZEQ" secondAttribute="centerY" id="z2N-0n-mcr"/>
@@ -64,52 +64,61 @@
                                         <size key="customSize" width="128" height="128"/>
                                         <connections>
                                             <outlet property="ingredientButton" destination="lYl-Ou-uu9" id="8lg-x0-9zI"/>
+                                            <segue destination="6ne-yM-5Pf" kind="show" identifier="Show" id="vKM-Va-frW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acI-11-BpZ">
-                                <rect key="frame" x="256" y="513" width="88" height="30"/>
-                                <state key="normal" title="Find recipes!"/>
                                 <connections>
-                                    <segue destination="xBp-pw-vxt" kind="show" id="gvg-gT-QHL"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jqI-15-ax3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rRo-gf-Xoy"/>
                                 </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="acI-11-BpZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7sz-dc-025"/>
                             <constraint firstItem="QYS-hf-pHk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="8ek-AL-pPH"/>
                             <constraint firstItem="QYS-hf-pHk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LbS-ME-DMb"/>
                             <constraint firstItem="18g-7O-6wL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SnF-WT-k2G"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="acI-11-BpZ" secondAttribute="bottom" constant="8" id="T8E-Pd-Dmh"/>
                             <constraint firstItem="18g-7O-6wL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iv4-yr-hr7"/>
                             <constraint firstItem="18g-7O-6wL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kOO-R0-ey0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8id-Kf-z4F"/>
+                    <connections>
+                        <outlet property="collectionView" destination="18g-7O-6wL" id="aQx-Db-51A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1991" y="272"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Qi3-0w-8ms">
+        <!--Results Table View Controller-->
+        <scene sceneID="dwc-kU-wHv">
             <objects>
-                <viewController id="xBp-pw-vxt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="26v-ud-dHI"/>
-                        <viewControllerLayoutGuide type="bottom" id="j0O-Ge-j9L"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IGi-Yg-l0F">
+                <tableViewController id="6ne-yM-5Pf" customClass="ResultsTableViewController" customModule="Kitchen_Pal" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FtJ-ZI-dmg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="70q-C5-ZHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QgU-tF-s2L">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QgU-tF-s2L" id="fYi-tg-HJz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6ne-yM-5Pf" id="Rus-Xc-K1v"/>
+                            <outlet property="delegate" destination="6ne-yM-5Pf" id="SIW-m5-t3E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4P-GZ-g8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="272"/>
+            <point key="canvasLocation" x="2775" y="272"/>
         </scene>
         <!--Browse recipes-->
         <scene sceneID="CDu-Fh-lvh">

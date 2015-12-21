@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewCellController: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ingredientButton: UIButton!
     
 }
