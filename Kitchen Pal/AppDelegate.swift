@@ -52,19 +52,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let steak = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
         steak.title = "The Beef Steak"
-        steak.directions = " "
+        steak.directions = "Directions for steak:  This is some text \n" +
+        "over multiple lines"
         
         let crustedChicken = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
         crustedChicken.title = "Parmesan Crusted Chicken"
-        crustedChicken.directions = " "
+        crustedChicken.directions =  "This is some text \n" +
+        "over multiple lines"
         
         let salmon = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
         salmon.title = "Grilled Salmon"
-        salmon.directions = " "
+        salmon.directions =  "This is some text \n" +
+        "over multiple lines"
         
         let tacos = NSEntityDescription.insertNewObjectForEntityForName("Recipes", inManagedObjectContext: self.managedObjectContext) as! Recipes
         tacos.title = "Fish Tacos"
-        tacos.directions = " "
+        tacos.directions =  "This is some text what if there is a lot more text asdafsfgsdfghgjhgbkjygqebrkgjahdvgkadfg \n" +
+        "over multiple lines"
         
         
         let steakRelation = steak.mutableSetValueForKeyPath("hasIngredient")

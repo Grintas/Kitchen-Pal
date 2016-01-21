@@ -14,7 +14,7 @@ class RecipeModalViewController: UITableViewController {
     
     @IBOutlet weak var recipeTitleLabel: UILabel!
     
-    @IBOutlet weak var recipeDirectionsLabel: UILabel!
+   // @IBOutlet weak var recipeDirectionsLabel: UILabel!
     
     @IBAction func closeModalView(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -22,9 +22,10 @@ class RecipeModalViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         // Do any additional setup after loading the view.
         self.recipeTitleLabel.text = self.cellTitle
-        self.recipeDirectionsLabel.text = self.cellDirections
+        //self.recipeDirectionsLabel.text = self.cellDirections
     }
 
     override func didReceiveMemoryWarning() {

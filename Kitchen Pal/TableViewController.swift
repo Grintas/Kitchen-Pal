@@ -15,7 +15,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         titles = appDelegate.getAllRecipes()
         
