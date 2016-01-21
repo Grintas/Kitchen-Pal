@@ -89,8 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     deleteAllObjects("Recipes")
                     initKitchen()
         //            insertSomeData()
-                    showRequestedRecipes("Fish")
-                    showExampleData()
+                    //showRequestedRecipes("Fish")
+                    //showExampleData()
         // Override point for customization after application launch.
         return true
     }
@@ -117,13 +117,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func getRequestedRecipes(request: String) -> [Recipes]?{
-        var requestedRecipes: [Recipes]? = nil
+        var requestedRecipes: [Recipes] = []
         let recipesRequest = NSFetchRequest(entityName: "Recipes")
         do {
             let recipes = try self.managedObjectContext.executeFetchRequest(recipesRequest)
             for recipe in recipes as! [Recipes] {
-                if recipe == request{
-                    requestedRecipes?.append(recipe)
+                let ingredients = recipe.valueForKey("hasIngredient") as! NSSet
+                for ingredient in ingredients{
+                    if ingredient.name == request{
+                        print(ingredient.name)
+                        requestedRecipes.append(recipe)
+                    }
                 }
             }
         } catch let error as NSError {

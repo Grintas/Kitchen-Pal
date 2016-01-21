@@ -34,19 +34,29 @@ class ResultsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return titles.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("recipeCell", forIndexPath: indexPath) as! RecipeCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("resViewTableCellIdentifier", forIndexPath: indexPath) as! ResultsTableViewCell
         
         cell.recipeName.text = titles[indexPath.row].title
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        if let cell = sender as! UITableViewCell! {
+            if let indexPath = tableView.indexPathForCell(cell) {
+                let resVC = segue.destinationViewController as! RecipeModalViewController
+                resVC.cellTitle = self.titles[indexPath.row].title
+                resVC.cellDirections = self.titles[indexPath.row].directions
+            }
+        }
     }
     
     /*

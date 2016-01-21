@@ -20,9 +20,11 @@
 		E23869641C036531000FE667 /* Recipes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */; };
 		E23869651C036531000FE667 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695F1C036531000FE667 /* Recipes.swift */; };
 		E27DED051C15D1CD00CD9D95 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */; };
-		E280E4DB1C15DA2D005C6983 /* TableViewSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280E4DA1C15DA2D005C6983 /* TableViewSuperViewController.swift */; };
+		E280E4DB1C15DA2D005C6983 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280E4DA1C15DA2D005C6983 /* TableViewController.swift */; };
 		E280E4DD1C15DBE6005C6983 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */; };
 		E28A98B21C1F0A27004F574E /* QuickSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */; };
+		E2BD00D71C2835FB00753A6D /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */; };
+		E2BD00D91C283D2300753A6D /* RecipeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BD00D81C283D2300753A6D /* RecipeModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +55,11 @@
 		E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E238695F1C036531000FE667 /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		E280E4DA1C15DA2D005C6983 /* TableViewSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSuperViewController.swift; sourceTree = "<group>"; };
+		E280E4DA1C15DA2D005C6983 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearchCollectionViewController.swift; sourceTree = "<group>"; };
+		E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		E2BD00D81C283D2300753A6D /* RecipeModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +113,12 @@
 				E23869161C0356F1000FE667 /* Info.plist */,
 				E238690E1C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld */,
 				E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */,
-				E280E4DA1C15DA2D005C6983 /* TableViewSuperViewController.swift */,
+				E280E4DA1C15DA2D005C6983 /* TableViewController.swift */,
 				E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */,
 				E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */,
 				E2352C7E1C1F14F700069CF7 /* ResultsTableViewController.swift */,
+				E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */,
+				E2BD00D81C283D2300753A6D /* RecipeModalViewController.swift */,
 			);
 			path = "Kitchen Pal";
 			sourceTree = "<group>";
@@ -229,13 +235,15 @@
 			files = (
 				E2352C7F1C1F14F700069CF7 /* ResultsTableViewController.swift in Sources */,
 				E23869101C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld in Sources */,
+				E2BD00D91C283D2300753A6D /* RecipeModalViewController.swift in Sources */,
+				E2BD00D71C2835FB00753A6D /* ResultsTableViewCell.swift in Sources */,
 				E238690A1C0356F1000FE667 /* ViewController.swift in Sources */,
 				E23869651C036531000FE667 /* Recipes.swift in Sources */,
 				E23869641C036531000FE667 /* Recipes+CoreDataProperties.swift in Sources */,
 				E23869621C036531000FE667 /* Ingredients+CoreDataProperties.swift in Sources */,
 				E28A98B21C1F0A27004F574E /* QuickSearchCollectionViewController.swift in Sources */,
 				E280E4DD1C15DBE6005C6983 /* RecipeCell.swift in Sources */,
-				E280E4DB1C15DA2D005C6983 /* TableViewSuperViewController.swift in Sources */,
+				E280E4DB1C15DA2D005C6983 /* TableViewController.swift in Sources */,
 				E23869631C036531000FE667 /* Ingredients.swift in Sources */,
 				E27DED051C15D1CD00CD9D95 /* CollectionViewCell.swift in Sources */,
 				E23869081C0356F1000FE667 /* AppDelegate.swift in Sources */,

@@ -12,8 +12,6 @@ private let reuseIdentifier = "prototypeCellIdentifier"
 
 class QuickSearchCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var buttonTitles: [Ingredients] = []
-    var indexPath: NSIndexPath?
-    var selectedItem: String?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -70,14 +68,19 @@ class QuickSearchCollectionViewController: UIViewController, UICollectionViewDel
         return cell
     }
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.indexPath = indexPath
-        self.selectedItem = self.buttonTitles[indexPath.item].name
-    }
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        self.indexPath = indexPath
+//        self.selectedItem = self.buttonTitles[indexPath.item].name
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let resVC = segue.destinationViewController as! ResultsTableViewController
-        resVC.selectedItem = self.selectedItem;
+        if let cell = sender as! CollectionViewCell! {
+            if let indexPath = collectionView.indexPathForCell(cell) {
+                let selectedItem = self.buttonTitles[indexPath.item].name
+                let resVC = segue.destinationViewController as! ResultsTableViewController
+                resVC.selectedItem = selectedItem;
+            }
+        }
     }
     
     // MARK: UICollectionViewDelegate

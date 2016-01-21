@@ -8,8 +8,11 @@
 
 import UIKit
 
-class TableViewSuperViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var titles: [Recipes] = []
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,11 +33,19 @@ class TableViewSuperViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("recipeCell", forIndexPath: indexPath) as! RecipeCell
-        
         cell.recipeName.text = titles[indexPath.row].title
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        if let cell = sender as! UITableViewCell! {
+            if let indexPath = self.tableView.indexPathForCell(cell){
+                let resVC = segue.destinationViewController as! RecipeModalViewController
+                resVC.cellTitle = self.titles[indexPath.row].title
+                resVC.cellDirections = self.titles[indexPath.row].directions
+            }
+        }
+    }
     
 
     /*
