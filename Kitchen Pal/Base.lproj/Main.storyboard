@@ -125,7 +125,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="recipeName" destination="mze-Sf-JJH" id="Wrd-G8-5Al"/>
-                                    <segue destination="Bnb-y7-rL9" kind="presentation" id="yMv-jH-DCB"/>
+                                    <segue destination="eLP-LD-ntH" kind="presentation" id="0ey-FX-7Z0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -139,81 +139,59 @@
             </objects>
             <point key="canvasLocation" x="2775" y="272"/>
         </scene>
-        <!--Recipe Modal View Controller-->
-        <scene sceneID="d2m-Qn-jOa">
+        <!--Final Modal View Controller-->
+        <scene sceneID="nEQ-Sf-AOL">
             <objects>
-                <tableViewController id="Bnb-y7-rL9" customClass="RecipeModalViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="16x-GM-lRU">
+                <viewController id="eLP-LD-ntH" customClass="FinalModalViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wmv-QW-Cka"/>
+                        <viewControllerLayoutGuide type="bottom" id="RW2-YT-hdq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vn0-Ce-On8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEt-dL-hWr">
+                                <rect key="frame" x="255" y="28" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4k-O8-33f">
+                                <rect key="frame" x="281" y="562" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeModalView:" destination="eLP-LD-ntH" eventType="touchUpInside" id="UB5-Ya-Oli"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oue-pk-3Gm">
+                                <rect key="frame" x="28" y="57" width="544" height="497"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NtQ-wp-LHM">
-                            <rect key="frame" x="0.0" y="104" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Close"/>
-                            <connections>
-                                <action selector="closeModalView:" destination="Bnb-y7-rL9" eventType="touchUpInside" id="knN-Sd-J6z"/>
-                            </connections>
-                        </button>
-                        <sections>
-                            <tableViewSection id="I4w-Pz-w34">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="SOU-ef-mYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SOU-ef-mYJ" id="F6v-ov-0ex">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0K-s3-VDg">
-                                                    <rect key="frame" x="255" y="19" width="90" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="z0K-s3-VDg" firstAttribute="centerX" secondItem="F6v-ov-0ex" secondAttribute="centerX" id="55W-Qj-o7U"/>
-                                                <constraint firstItem="z0K-s3-VDg" firstAttribute="centerY" secondItem="F6v-ov-0ex" secondAttribute="centerY" id="i6h-go-oCY"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ek9-S1-s03">
-                                        <rect key="frame" x="0.0" y="60" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ek9-S1-s03" id="dEK-GB-2es">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9m-em-2MH">
-                                                    <rect key="frame" x="233" y="11" width="134" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="a9m-em-2MH" firstAttribute="centerY" secondItem="dEK-GB-2es" secondAttribute="centerY" id="6cg-y3-l3u"/>
-                                                <constraint firstItem="a9m-em-2MH" firstAttribute="centerX" secondItem="dEK-GB-2es" secondAttribute="centerX" id="rDi-mT-vYK"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Bnb-y7-rL9" id="5da-8a-zmS"/>
-                            <outlet property="delegate" destination="Bnb-y7-rL9" id="o5u-t2-VFf"/>
-                        </connections>
-                    </tableView>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="oue-pk-3Gm" secondAttribute="trailing" constant="8" id="Vik-bM-Hdx"/>
+                            <constraint firstItem="oue-pk-3Gm" firstAttribute="top" secondItem="IEt-dL-hWr" secondAttribute="bottom" constant="8" id="XC9-cS-bGg"/>
+                            <constraint firstItem="IEt-dL-hWr" firstAttribute="top" secondItem="Wmv-QW-Cka" secondAttribute="bottom" constant="8" id="aca-WJ-TNH"/>
+                            <constraint firstItem="f4k-O8-33f" firstAttribute="centerX" secondItem="vn0-Ce-On8" secondAttribute="centerX" id="cRD-cO-5VZ"/>
+                            <constraint firstItem="IEt-dL-hWr" firstAttribute="centerX" secondItem="vn0-Ce-On8" secondAttribute="centerX" id="mc1-Yr-yuv"/>
+                            <constraint firstItem="f4k-O8-33f" firstAttribute="top" secondItem="oue-pk-3Gm" secondAttribute="bottom" constant="8" id="ndO-YY-g55"/>
+                            <constraint firstItem="RW2-YT-hdq" firstAttribute="top" secondItem="f4k-O8-33f" secondAttribute="bottom" constant="8" id="w4N-Yw-yFs"/>
+                            <constraint firstItem="oue-pk-3Gm" firstAttribute="leading" secondItem="vn0-Ce-On8" secondAttribute="leadingMargin" constant="8" id="wcE-61-0Xa"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="recipeDirectionsLabel" destination="a9m-em-2MH" id="0pM-RG-sJN"/>
-                        <outlet property="recipeTitleLabel" destination="z0K-s3-VDg" id="qAc-Fw-jZf"/>
+                        <outlet property="recipeDirectionsTextView" destination="oue-pk-3Gm" id="DIc-K1-BYP"/>
+                        <outlet property="recipeTitleLabel" destination="IEt-dL-hWr" id="NVm-NS-dg8"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zK8-iC-ZMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txS-Vc-XF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="981"/>
+            <point key="canvasLocation" x="2775" y="1047"/>
         </scene>
         <!--Browse recipes-->
         <scene sceneID="CDu-Fh-lvh">
@@ -252,7 +230,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="recipeName" destination="qeL-Pc-I6S" id="UB0-I1-sMh"/>
-                                            <segue destination="Bnb-y7-rL9" kind="presentation" id="4t2-D8-lzj"/>
+                                            <segue destination="eLP-LD-ntH" kind="presentation" id="Na2-8U-wqS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -321,6 +299,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4t2-D8-lzj"/>
+        <segue reference="Na2-8U-wqS"/>
     </inferredMetricsTieBreakers>
 </document>

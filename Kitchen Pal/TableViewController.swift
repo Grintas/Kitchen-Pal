@@ -40,7 +40,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         if let cell = sender as! UITableViewCell! {
             if let indexPath = self.tableView.indexPathForCell(cell){
-                let resVC = segue.destinationViewController as! RecipeModalViewController
+                let resVC = segue.destinationViewController as! FinalModalViewController
                 resVC.cellTitle = self.titles[indexPath.row].title
                 resVC.cellDirections = self.titles[indexPath.row].directions
             }

@@ -1,20 +1,20 @@
 //
-//  recipeModalViewController.swift
+//  FinalModalViewController.swift
 //  Kitchen Pal
 //
-//  Created by Grintas Junevičius on 12/21/15.
-//  Copyright © 2015 Grintas Junevičius. All rights reserved.
+//  Created by Grintas Junevičius on 1/22/16.
+//  Copyright © 2016 Grintas Junevičius. All rights reserved.
 //
 
 import UIKit
 
-class RecipeModalViewController: UITableViewController {
+class FinalModalViewController: UIViewController {
     var cellTitle: String = ""
     var cellDirections: String = ""
-    
+
     @IBOutlet weak var recipeTitleLabel: UILabel!
     
-   // @IBOutlet weak var recipeDirectionsLabel: UILabel!
+    @IBOutlet weak var recipeDirectionsTextView: UITextView!
     
     @IBAction func closeModalView(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -22,10 +22,11 @@ class RecipeModalViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+
         // Do any additional setup after loading the view.
         self.recipeTitleLabel.text = self.cellTitle
-        //self.recipeDirectionsLabel.text = self.cellDirections
+        self.recipeDirectionsTextView.text = self.cellDirections
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +34,6 @@ class RecipeModalViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    //    cell.recipeTitleLabel.text = cellTitle
-    //  cell.recipeDirectionsLabel.text = cellDirections
-    //  return cell
 
     /*
     // MARK: - Navigation
