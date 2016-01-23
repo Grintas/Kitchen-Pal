@@ -11,6 +11,7 @@ import UIKit
 class ResultsTableViewController: UITableViewController {
     var selectedItem: String? = nil
     var titles: [Recipes] = []
+    var dataController = ModelDataController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,8 @@ class ResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        titles = appDelegate.getRequestedRecipes(selectedItem!)!
+        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        titles = dataController.getRequestedRecipes(selectedItem!)!
 
     }
 

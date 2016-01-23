@@ -164,10 +164,9 @@
                                     <action selector="closeModalView:" destination="eLP-LD-ntH" eventType="touchUpInside" id="UB5-Ya-Oli"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oue-pk-3Gm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oue-pk-3Gm">
                                 <rect key="frame" x="28" y="57" width="544" height="497"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -196,7 +195,7 @@
         <!--Browse recipes-->
         <scene sceneID="CDu-Fh-lvh">
             <objects>
-                <viewController title="Browse recipes" id="PbJ-Hi-0XX" customClass="TableViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Browse recipes" id="PbJ-Hi-0XX" customClass="BrowseRecipesTableViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BhT-AB-H3L"/>
                         <viewControllerLayoutGuide type="bottom" id="azP-Oq-U91"/>
@@ -206,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9DA-oX-Q3E">
-                                <rect key="frame" x="20" y="20" width="560" height="531"/>
+                                <rect key="frame" x="20" y="20" width="560" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="qtE-HB-ybF" customClass="RecipeCell" customModule="Kitchen_Pal" customModuleProvider="target">
@@ -230,7 +229,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="recipeName" destination="qeL-Pc-I6S" id="UB0-I1-sMh"/>
-                                            <segue destination="eLP-LD-ntH" kind="presentation" id="Na2-8U-wqS"/>
+                                            <segue destination="eLP-LD-ntH" kind="presentation" identifier="showRecipeDirectionsSegue" id="Na2-8U-wqS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -239,14 +238,35 @@
                                     <outlet property="delegate" destination="PbJ-Hi-0XX" id="57t-Gp-vH4"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZd-hm-MsX">
+                                <rect key="frame" x="548" y="503" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="9nf-sn-sSg"/>
+                                    <constraint firstAttribute="height" constant="40" id="U3c-yZ-mYN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="showAddRecipeVC:" destination="PbJ-Hi-0XX" eventType="touchUpInside" id="hEF-aY-g4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9DA-oX-Q3E" firstAttribute="leading" secondItem="Ntb-Rv-ge5" secondAttribute="leadingMargin" id="0U2-mI-QpA"/>
                             <constraint firstItem="9DA-oX-Q3E" firstAttribute="top" secondItem="BhT-AB-H3L" secondAttribute="bottom" id="Ffy-3j-vDw"/>
+                            <constraint firstItem="AZd-hm-MsX" firstAttribute="top" secondItem="9DA-oX-Q3E" secondAttribute="bottom" constant="8" id="IIo-aD-Y9t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9DA-oX-Q3E" secondAttribute="trailing" id="JeF-ba-1ci"/>
+                            <constraint firstItem="AZd-hm-MsX" firstAttribute="trailing" secondItem="Ntb-Rv-ge5" secondAttribute="trailingMargin" constant="8" id="SWv-sA-zXH"/>
                             <constraint firstItem="azP-Oq-U91" firstAttribute="top" secondItem="9DA-oX-Q3E" secondAttribute="bottom" id="ccJ-Vj-nia"/>
+                            <constraint firstItem="azP-Oq-U91" firstAttribute="top" secondItem="AZd-hm-MsX" secondAttribute="bottom" constant="8" id="sPr-Oo-Ekf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ccJ-Vj-nia"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Browse recipes" id="p5p-im-J3O">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
@@ -258,6 +278,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCn-Vm-qJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="919"/>
+        </scene>
+        <!--Add Recipe View Controller-->
+        <scene sceneID="HuM-a3-FKs">
+            <objects>
+                <viewController storyboardIdentifier="addRecipeVC" id="aOT-48-5zN" customClass="AddRecipeViewController" customModule="Kitchen_Pal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="beA-WK-bUB"/>
+                        <viewControllerLayoutGuide type="bottom" id="JU2-l6-ti3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IFt-Di-2MP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fkjsggf" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLu-if-1Qa">
+                                <rect key="frame" x="8" y="62" width="572" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QiL-p3-jLx">
+                                <rect key="frame" x="8" y="129" width="584" height="463"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-jD-ZsB">
+                                <rect key="frame" x="8" y="100" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqc-Cs-bkg">
+                                <rect key="frame" x="285" y="16" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="closeModalWindow:" destination="aOT-48-5zN" eventType="touchUpInside" id="gMg-jy-uYA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="am2-iJ-229">
+                                <rect key="frame" x="544" y="16" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="aOT-48-5zN" eventType="touchUpInside" id="AMC-64-9UW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtI-pP-XAE">
+                                <rect key="frame" x="8" y="33" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mLu-if-1Qa" firstAttribute="top" secondItem="WtI-pP-XAE" secondAttribute="bottom" constant="8" id="29U-Nl-eVw"/>
+                            <constraint firstItem="QiL-p3-jLx" firstAttribute="leading" secondItem="IFt-Di-2MP" secondAttribute="leading" constant="8" id="6DJ-6z-1Kv"/>
+                            <constraint firstItem="am2-iJ-229" firstAttribute="top" secondItem="IFt-Di-2MP" secondAttribute="top" constant="16" id="85c-S1-534"/>
+                            <constraint firstItem="mLu-if-1Qa" firstAttribute="leading" secondItem="IFt-Di-2MP" secondAttribute="leading" constant="8" id="Sol-zp-zjp"/>
+                            <constraint firstItem="Ofd-jD-ZsB" firstAttribute="top" secondItem="mLu-if-1Qa" secondAttribute="bottom" constant="8" id="cml-jh-dab"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mLu-if-1Qa" secondAttribute="trailing" id="cwf-XE-H3H"/>
+                            <constraint firstItem="QiL-p3-jLx" firstAttribute="top" secondItem="Ofd-jD-ZsB" secondAttribute="bottom" constant="8" id="eJ6-z8-nol"/>
+                            <constraint firstAttribute="trailing" secondItem="QiL-p3-jLx" secondAttribute="trailing" constant="8" id="fdx-0t-Qsc"/>
+                            <constraint firstItem="Ofd-jD-ZsB" firstAttribute="leading" secondItem="IFt-Di-2MP" secondAttribute="leading" constant="8" id="g8H-e5-PoJ"/>
+                            <constraint firstItem="Oqc-Cs-bkg" firstAttribute="centerX" secondItem="IFt-Di-2MP" secondAttribute="centerX" id="gbJ-8D-hc1"/>
+                            <constraint firstAttribute="trailing" secondItem="am2-iJ-229" secondAttribute="trailing" constant="8" id="lZN-oZ-yHa"/>
+                            <constraint firstItem="WtI-pP-XAE" firstAttribute="top" secondItem="beA-WK-bUB" secondAttribute="bottom" constant="13" id="mS1-4S-zBg"/>
+                            <constraint firstItem="Oqc-Cs-bkg" firstAttribute="top" secondItem="IFt-Di-2MP" secondAttribute="top" constant="16" id="nqm-3G-8Vn"/>
+                            <constraint firstItem="WtI-pP-XAE" firstAttribute="leading" secondItem="IFt-Di-2MP" secondAttribute="leading" constant="8" id="u1D-d4-Xrh"/>
+                            <constraint firstItem="JU2-l6-ti3" firstAttribute="top" secondItem="QiL-p3-jLx" secondAttribute="bottom" constant="8" id="vWa-2x-imd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="directionsTextView" destination="QiL-p3-jLx" id="eEq-VP-CfO"/>
+                        <outlet property="recipeTitleField" destination="mLu-if-1Qa" id="tjc-Ww-CKh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="917-Pr-WPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1893" y="1572"/>
         </scene>
         <!--Kitchen Pal-->
         <scene sceneID="ZVK-RS-9Ai">

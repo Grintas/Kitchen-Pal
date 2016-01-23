@@ -20,11 +20,13 @@
 		E23869641C036531000FE667 /* Recipes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */; };
 		E23869651C036531000FE667 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E238695F1C036531000FE667 /* Recipes.swift */; };
 		E27DED051C15D1CD00CD9D95 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */; };
-		E280E4DB1C15DA2D005C6983 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280E4DA1C15DA2D005C6983 /* TableViewController.swift */; };
+		E280E4DB1C15DA2D005C6983 /* BrowseRecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280E4DA1C15DA2D005C6983 /* BrowseRecipesTableViewController.swift */; };
 		E280E4DD1C15DBE6005C6983 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */; };
 		E28A98B21C1F0A27004F574E /* QuickSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */; };
 		E2AE51CC1C5291D9003B7ADF /* FinalModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE51CB1C5291D9003B7ADF /* FinalModalViewController.swift */; };
 		E2BD00D71C2835FB00753A6D /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */; };
+		E2CC945F1C5398B900A5B91D /* ModelDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC945E1C5398B900A5B91D /* ModelDataController.swift */; };
+		E2CC94631C53A41400A5B91D /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC94621C53A41400A5B91D /* AddRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +57,13 @@
 		E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E238695F1C036531000FE667 /* Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		E280E4DA1C15DA2D005C6983 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E280E4DA1C15DA2D005C6983 /* BrowseRecipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseRecipesTableViewController.swift; sourceTree = "<group>"; };
 		E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearchCollectionViewController.swift; sourceTree = "<group>"; };
 		E2AE51CB1C5291D9003B7ADF /* FinalModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalModalViewController.swift; sourceTree = "<group>"; };
 		E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		E2CC945E1C5398B900A5B91D /* ModelDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataController.swift; path = "Kitchen Pal/ModelDataController.swift"; sourceTree = "<group>"; };
+		E2CC94621C53A41400A5B91D /* AddRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +87,6 @@
 		E23868FB1C0356F1000FE667 = {
 			isa = PBXGroup;
 			children = (
-				E238695C1C036531000FE667 /* Ingredients+CoreDataProperties.swift */,
-				E238695D1C036531000FE667 /* Ingredients.swift */,
-				E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */,
-				E238695F1C036531000FE667 /* Recipes.swift */,
 				E23869061C0356F1000FE667 /* Kitchen Pal */,
 				E238691E1C0356F1000FE667 /* Kitchen PalTests */,
 				E23869051C0356F1000FE667 /* Products */,
@@ -105,20 +105,14 @@
 		E23869061C0356F1000FE667 /* Kitchen Pal */ = {
 			isa = PBXGroup;
 			children = (
+				E2CC94641C53B6ED00A5B91D /* Model */,
+				E2CC94661C53B74400A5B91D /* Views */,
+				E2CC94651C53B73100A5B91D /* Controllers */,
 				E23869071C0356F1000FE667 /* AppDelegate.swift */,
-				E23869091C0356F1000FE667 /* ViewController.swift */,
 				E238690B1C0356F1000FE667 /* Main.storyboard */,
 				E23869111C0356F1000FE667 /* Assets.xcassets */,
 				E23869131C0356F1000FE667 /* LaunchScreen.storyboard */,
 				E23869161C0356F1000FE667 /* Info.plist */,
-				E238690E1C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld */,
-				E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */,
-				E280E4DA1C15DA2D005C6983 /* TableViewController.swift */,
-				E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */,
-				E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */,
-				E2352C7E1C1F14F700069CF7 /* ResultsTableViewController.swift */,
-				E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */,
-				E2AE51CB1C5291D9003B7ADF /* FinalModalViewController.swift */,
 			);
 			path = "Kitchen Pal";
 			sourceTree = "<group>";
@@ -130,6 +124,43 @@
 				E23869211C0356F1000FE667 /* Info.plist */,
 			);
 			path = "Kitchen PalTests";
+			sourceTree = "<group>";
+		};
+		E2CC94641C53B6ED00A5B91D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E238690E1C0356F1000FE667 /* Kitchen_Pal.xcdatamodeld */,
+				E238695C1C036531000FE667 /* Ingredients+CoreDataProperties.swift */,
+				E238695D1C036531000FE667 /* Ingredients.swift */,
+				E238695E1C036531000FE667 /* Recipes+CoreDataProperties.swift */,
+				E238695F1C036531000FE667 /* Recipes.swift */,
+				E2CC945E1C5398B900A5B91D /* ModelDataController.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E2CC94651C53B73100A5B91D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E23869091C0356F1000FE667 /* ViewController.swift */,
+				E280E4DA1C15DA2D005C6983 /* BrowseRecipesTableViewController.swift */,
+				E28A98B11C1F0A27004F574E /* QuickSearchCollectionViewController.swift */,
+				E2352C7E1C1F14F700069CF7 /* ResultsTableViewController.swift */,
+				E2AE51CB1C5291D9003B7ADF /* FinalModalViewController.swift */,
+				E2CC94621C53A41400A5B91D /* AddRecipeViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E2CC94661C53B74400A5B91D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E27DED041C15D1CD00CD9D95 /* CollectionViewCell.swift */,
+				E280E4DC1C15DBE6005C6983 /* RecipeCell.swift */,
+				E2BD00D61C2835FB00753A6D /* ResultsTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +213,7 @@
 				TargetAttributes = {
 					E23869031C0356F1000FE667 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = PDR4VQLAH4;
 					};
 					E238691A1C0356F1000FE667 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -238,12 +270,14 @@
 				E2BD00D71C2835FB00753A6D /* ResultsTableViewCell.swift in Sources */,
 				E238690A1C0356F1000FE667 /* ViewController.swift in Sources */,
 				E23869651C036531000FE667 /* Recipes.swift in Sources */,
+				E2CC945F1C5398B900A5B91D /* ModelDataController.swift in Sources */,
 				E23869641C036531000FE667 /* Recipes+CoreDataProperties.swift in Sources */,
 				E23869621C036531000FE667 /* Ingredients+CoreDataProperties.swift in Sources */,
+				E2CC94631C53A41400A5B91D /* AddRecipeViewController.swift in Sources */,
 				E28A98B21C1F0A27004F574E /* QuickSearchCollectionViewController.swift in Sources */,
 				E2AE51CC1C5291D9003B7ADF /* FinalModalViewController.swift in Sources */,
 				E280E4DD1C15DBE6005C6983 /* RecipeCell.swift in Sources */,
-				E280E4DB1C15DA2D005C6983 /* TableViewController.swift in Sources */,
+				E280E4DB1C15DA2D005C6983 /* BrowseRecipesTableViewController.swift in Sources */,
 				E23869631C036531000FE667 /* Ingredients.swift in Sources */,
 				E27DED051C15D1CD00CD9D95 /* CollectionViewCell.swift in Sources */,
 				E23869081C0356F1000FE667 /* AppDelegate.swift in Sources */,
@@ -375,10 +409,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Kitchen Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Grintas.Kitchen-Pal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -386,10 +424,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Kitchen Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Grintas.Kitchen-Pal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -456,7 +498,8 @@
 				E238690F1C0356F1000FE667 /* Kitchen_Pal.xcdatamodel */,
 			);
 			currentVersion = E238690F1C0356F1000FE667 /* Kitchen_Pal.xcdatamodel */;
-			path = Kitchen_Pal.xcdatamodeld;
+			name = Kitchen_Pal.xcdatamodeld;
+			path = "Kitchen Pal/Kitchen_Pal.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

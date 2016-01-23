@@ -8,16 +8,19 @@
 
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class BrowseRecipesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var titles: [Recipes] = []
+    var dataController = ModelDataController()
     
     @IBOutlet weak var tableView: UITableView!
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        titles = appDelegate.getAllRecipes()
+        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        titles = dataController.getAllRecipes()
         
         // Do any additional setup after loading the view.
     }
@@ -27,6 +30,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func showAddRecipeVC(sender: UIButton) {
+       
+        let addRecipeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addRecipeVC") as! AddRecipeViewController
+        addRecipeVC.callbackForClose = {
+            self.titles = self.dataController.getAllRecipes()
+            self.tableView.reloadData()
+        }
+        self.presentViewController(addRecipeVC, animated: true, completion: nil)
+        
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }
@@ -38,13 +51,17 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        if let cell = sender as! UITableViewCell! {
-            if let indexPath = self.tableView.indexPathForCell(cell){
-                let resVC = segue.destinationViewController as! FinalModalViewController
-                resVC.cellTitle = self.titles[indexPath.row].title
-                resVC.cellDirections = self.titles[indexPath.row].directions
+        if segue.identifier == "showRecipeDirectionsSegue" {
+            if let cell = sender as! UITableViewCell! {
+                if let indexPath = self.tableView.indexPathForCell(cell){
+                    let resVC = segue.destinationViewController as! FinalModalViewController
+                    resVC.cellTitle = self.titles[indexPath.row].title
+                    resVC.cellDirections = self.titles[indexPath.row].directions
+                }
             }
         }
+         self.tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: false)
+        
     }
     
 

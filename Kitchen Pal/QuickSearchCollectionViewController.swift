@@ -15,6 +15,8 @@ class QuickSearchCollectionViewController: UIViewController, UICollectionViewDel
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var dataController = ModelDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +25,7 @@ class QuickSearchCollectionViewController: UIViewController, UICollectionViewDel
 
         // Register cell classes
 
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        buttonTitles = appDelegate.getAllIngredients()
+        buttonTitles = dataController.getAllIngredients()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,8 +54,7 @@ class QuickSearchCollectionViewController: UIViewController, UICollectionViewDel
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         if buttonTitles.count == 0 {
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            buttonTitles = appDelegate.getAllIngredients()
+            buttonTitles = dataController.getAllIngredients()
         }
         return buttonTitles.count
     }

@@ -22,11 +22,16 @@ class FinalModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.recipeDirectionsTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         // Do any additional setup after loading the view.
         self.recipeTitleLabel.text = self.cellTitle
+        //self.recipeDirectionsTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         self.recipeDirectionsTextView.text = self.cellDirections
         
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        recipeDirectionsTextView.setContentOffset(CGPointZero, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
